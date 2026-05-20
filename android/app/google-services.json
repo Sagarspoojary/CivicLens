@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "330251118407",
+    "project_id": "civiclens-6fa89",
+    "storage_bucket": "civiclens-6fa89.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330251118407:android:f147c9bb694bd1b2cace62",
+        "android_client_info": {
+          "package_name": "com.civiclens.civiclens"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330251118407-jpv53aq7hii7564cfmcieqj50arj1sf3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.civiclens.civiclens",
+            "certificate_hash": "89890d2cf50ae1cad6aa78382b16c98753b4b8ff"
+          }
+        },
+        {
+          "client_id": "330251118407-bvmbcjjqhmmqp1raea15l5318dtj13vr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApAEHvWuTbcOC6ML34E0wVCQFnPVybiZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330251118407-bvmbcjjqhmmqp1raea15l5318dtj13vr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "330251118407-74hjk0go726el2a3dfv1sejn3gb9bn56.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.civiclens.civiclens"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
