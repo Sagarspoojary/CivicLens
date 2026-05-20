@@ -1,0 +1,29 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // User collection: anyone can read their own profile, only admins/system can write.
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false; // Profiles managed through cloud functions or console seeding
+    }
+
+    // Complaints collection:
+    // 1. Citizens can create complaints (from flutter app)
+    // 2. Department officials can read and write complaints only matching their assigned department role.
+    match /complaints/{complaintId} {
+      allow create: if request.auth != null; // Any authenticated user/citizen can lodge a complaint
+      
+      allow read, update: if request.auth != null && (
+        // Citizen who created the complaint can see it
+        resource.data.userId == request.auth.uid ||
+        // Official who belongs to the assigned department
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == resource.data.assignedDepartment)
+      );
+
+      // Only system or direct console access should delete records
+      allow delete: if false; 
+    }
+  }
+}
